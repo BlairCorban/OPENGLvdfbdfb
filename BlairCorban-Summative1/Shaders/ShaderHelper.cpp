@@ -34,6 +34,10 @@ GLuint ShaderHelper::compileFragmentShader(const char* shaderCode) {
 	return compileShader(GL_FRAGMENT_SHADER, shaderCode);
 }
 
+GLuint ShaderHelper::compileGeometryShader(const char* shaderCode) {
+	return compileShader(GL_GEOMETRY_SHADER, shaderCode);
+}
+
 GLuint ShaderHelper::compileShader(GLenum ShaderType, const char* shaderCode) {
 	const  GLuint shaderObjectId = glCreateShader(ShaderType);
 	if (shaderObjectId == 0) {
@@ -105,11 +109,13 @@ GLint ShaderHelper::validateProgram(GLuint programObjectId) {
 	return Success;
 }
 
-void ShaderHelper::compileAndLinkShaders(std::string vertex_shader, std::string fragment_shader, GLuint& program) {
+void ShaderHelper::compileAndLinkShaders(std::string vertex_shader, std::string fragment_shader,std::string geometry_shader, GLuint& program) {
 	std::string vertexShaderSource = ShaderHelper::readShaderFileFromResource(vertex_shader.c_str());
 	std::string fragmentShaderSource = ShaderHelper::readShaderFileFromResource(fragment_shader.c_str());
+	std::string geometryShaderSource = ShaderHelper::readShaderFileFromResource(geometry_shader.c_str());
 	GLuint vertexShader = ShaderHelper::compileVertexShader(vertexShaderSource.c_str());
 	GLuint fragmentShader = ShaderHelper::compileFragmentShader(fragmentShaderSource.c_str());
+	GLuint geometryShader = ShaderHelper::compileGeometryShader(geometryShaderSource.c_str());
 	program = ShaderHelper::linkProgram(vertexShader, fragmentShader);
 	ShaderHelper::validateProgram(program);
 }

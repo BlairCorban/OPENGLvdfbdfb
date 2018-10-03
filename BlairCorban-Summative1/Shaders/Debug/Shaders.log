@@ -1,2 +1,4 @@
-﻿  main.cpp
-  Shaders.vcxproj -> D:\Users\blair.cor6870\Documents\GitHub\OPENGL\BlairCorban-Summative1\Debug\Shaders.exe
+﻿  GameScene.cpp
+d:\users\blair.cor6870\documents\github\openglvdfbdfb\blaircorban-summative1\shaders\gamescene.cpp(83): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+d:\users\blair.cor6870\documents\github\openglvdfbdfb\blaircorban-summative1\shaders\gamescene.cpp(83): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+  Shaders.vcxproj -> D:\Users\blair.cor6870\Documents\GitHub\OPENGLvdfbdfb\BlairCorban-Summative1\Debug\Shaders.exe

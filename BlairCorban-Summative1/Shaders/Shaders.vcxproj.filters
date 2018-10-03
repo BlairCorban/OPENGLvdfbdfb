@@ -24,6 +24,9 @@
     <None Include="fragment_shader.glsl">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="geometry_shader.glsl">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ShaderHelper.h">
@@ -61,5 +64,10 @@
     <ClCompile Include="GameScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="heightmap.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

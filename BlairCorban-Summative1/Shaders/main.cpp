@@ -210,7 +210,7 @@ int main(int argc, char **argv)
 	glEnable(GL_DEPTH_TEST);
 	glClearColor(0.5f, 0.5f, 0.5f, 1);
 
-	ShaderHelper::compileAndLinkShaders("vertex_shader.glsl", "fragment_shader.glsl", g_iShaderProgram);
+	ShaderHelper::compileAndLinkShaders("vertex_shader.glsl", "fragment_shader.glsl","geometry_shader.glsl", g_iShaderProgram);
 
 	glActiveTexture(GL_TEXTURE0);
 

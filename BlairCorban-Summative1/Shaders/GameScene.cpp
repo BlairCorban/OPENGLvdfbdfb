@@ -1,5 +1,8 @@
 #include "GameScene.h"
+#define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
+#include <vector>
+#include <iostream>
 CGameScene* CGameScene::s_pGame = 0;
 
 CGameScene::CGameScene()
@@ -23,6 +26,34 @@ CGameScene::~CGameScene()
 	}
 }
 
+void CreateTerrain(const std::string& location)
+{
+
+	int w, h, channels;
+	unsigned char* image = stbi_load(location.c_str(), &w, &h, &channels, 0);
+	
+	//stbi_uc pixel = image[w * y + x];
+
+	std::vector<float> terrain = std::vector<float>(w * h);
+	std::vector<float>& heightMapData = terrain;
+	for (GLsizei r = 0; r < h; ++r)
+	{
+		for (GLsizei c = 0; c < w; ++c)
+		{
+			heightMapData[r * w + c] = image[(r * w + c) * channels] / 255.0f;
+		}
+
+	}
+
+	stbi_image_free(image);
+	/*for (GLsizei i = 0; i < heightMapData.size(); i++)
+	{
+		std::cout << heightMapData[i];
+	}*/
+
+}
+
+
 bool CGameScene::Initialise(GLuint* _program)
 {
 	m_pProgram = _program;
@@ -30,13 +61,13 @@ bool CGameScene::Initialise(GLuint* _program)
 	if(!m_pMainCamera)
 		m_pMainCamera = new CCamera(m_pProgram);
 
-	CreateTerrain("heightmap.RAW");
+	CreateTerrain("heightmap.png");
 
 
 
-	//CModel* bigcube = new CModel(m_pProgram);
-	//bigcube->Initialize(TRUE);
-	//m_vecpModels.push_back(bigcube);
+	CModel* bigcube = new CModel(m_pProgram);
+	bigcube->Initialize(TRUE);
+	m_vecpModels.push_back(bigcube);
 	
 
 	return true;
@@ -116,24 +147,7 @@ std::vector<CModel*> CGameScene::GetModels()
 	return m_vecpModels;
 }
 
-void CreateTerrain(const std::string& location)
-{
-	int Xpixels, Ypixels, channels;
-	unsigned char* heightmapImage = stbi_load(location.c_str(), &Xpixels, &Ypixels, &channels, 0);
 
 
-
-	/*std::vector<float> terrain = std::vector<float>(Xpixels * Ypixels);
-	for (GLsizei r = 0; r < Ypixels; r++)
-	{
-		for (GLsizei c = 0; r < Xpixels; c++)
-		{
-			terrain[r * Xpixels * c] = heightmapImage[(r * Xpixels * c) * channels] / 255.0f;
-		}
-	}
-	*/
-
-
-}
 
 
