@@ -19,11 +19,11 @@ public:
 	static GLuint compileTessContShader(const char * shaderCode);
 	static GLuint compileTessEvalShader(const char * shaderCode);
 	static GLuint compileShader(GLenum ShaderType, const char* shaderCode);
-	static GLuint linkProgram(GLuint vertexShaderId, GLuint fragmentShaderId, GLuint tessContShaderId, GLuint tessEvalShaderId);
-	//static GLuint linkProgram(GLuint vertexShaderId, GLuint fragmentShaderId);
+	//static GLuint linkProgram(GLuint vertexShaderId, GLuint fragmentShaderId, GLuint tessContShaderId, GLuint tessEvalShaderId);
+	static GLuint linkProgram(GLuint vertexShaderId, GLuint fragmentShaderId);
 	static GLint validateProgram(GLuint programObjectId);
-	static void compileAndLinkShaders(std::string vertex_shader, std::string fragment_shader, std::string geometry_shader , std::string tesscont_shader, std::string tesseval_shader, GLuint & program);
-	//static void compileAndLinkShaders(std::string vertex_shader, std::string fragment_shader, std::string geometry_shader, GLuint & program);
+	//static void compileAndLinkShaders(std::string vertex_shader, std::string fragment_shader, std::string geometry_shader , std::string tesscont_shader, std::string tesseval_shader, GLuint & program);
+	static void compileAndLinkShaders(std::string vertex_shader, std::string fragment_shader, std::string geometry_shader, GLuint & program);
 };
 
 //std::string TAG = "ShaderHelper";

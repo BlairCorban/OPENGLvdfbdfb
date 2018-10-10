@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Utils.h"
+#include <string>
 #include "glew.h"
 #include "freeglut.h"
 #include "glm\glm.hpp"

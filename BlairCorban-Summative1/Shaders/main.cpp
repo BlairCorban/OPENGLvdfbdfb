@@ -103,11 +103,11 @@ void ProcessInput()
 	if (g_pMainCamera != nullptr)
 	{
 		if (keyState[(unsigned char)'w'] == BUTTON_DOWN || keyState[256] == BUTTON_DOWN) {
-			g_pMainCamera->SetPosition(g_pMainCamera->GetCameraFront() * g_pMainCamera->GetCameraSpeed());
+			g_pMainCamera->SetPosition(g_pMainCamera->GetCameraUp() * g_pMainCamera->GetCameraSpeed());
 		}
 
 		if (keyState[(unsigned char)'s'] == BUTTON_DOWN || keyState[257] == BUTTON_DOWN) {
-			g_pMainCamera->SetPosition(-(g_pMainCamera->GetCameraFront() * g_pMainCamera->GetCameraSpeed()));
+			g_pMainCamera->SetPosition(-(g_pMainCamera->GetCameraUp() * g_pMainCamera->GetCameraSpeed()));
 		}
 
 		if (keyState[(unsigned char)'a'] == BUTTON_DOWN || keyState[258] == BUTTON_DOWN) {
@@ -210,7 +210,8 @@ int main(int argc, char **argv)
 	glEnable(GL_DEPTH_TEST);
 	glClearColor(0.5f, 0.5f, 0.5f, 1);
 
-	ShaderHelper::compileAndLinkShaders("vertex_shader.glsl", "fragment_shader.glsl","geometry_shader.glsl", "tesselation_shader.glsl", "tesselationevaluation_shader.glsl", g_iShaderProgram);
+	ShaderHelper::compileAndLinkShaders("vertex_shader.glsl", "fragment_shader.glsl","geometry_shader.glsl", g_iShaderProgram);
+	//ShaderHelper::compileAndLinkShaders("vertex_shader.glsl", "fragment_shader.glsl","geometry_shader.glsl", "tesselation_shader.glsl", "tesselationevaluation_shader.glsl", g_iShaderProgram);
 
 	glActiveTexture(GL_TEXTURE0);
 

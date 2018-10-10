@@ -55,6 +55,8 @@ static Vertex* SetCubeVertices()
 	return vertices;
 }
 
+
+
 static GLuint* SetIndices(int _iIndices)
 {
 	GLuint* indices = new GLuint[_iIndices];

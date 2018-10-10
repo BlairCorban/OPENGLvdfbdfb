@@ -18,12 +18,12 @@ CGameScene::~CGameScene()
 		m_vecpModels.pop_back();
 		delete tempModel;
 	}
-	while (!m_vecpTerrain.empty())
-	{
-		TessModel* tempModel = m_vecpTerrain.back();
-		m_vecpTerrain.pop_back();
-		delete tempModel;
-	}
+	//while (!m_vecpTerrain.empty())
+	//{
+	//	TessModel* tempModel = m_vecpTerrain.back();
+	//	m_vecpTerrain.pop_back();
+	//	delete tempModel;
+	//}
 
 	if (m_pMainCamera != nullptr)
 	{

@@ -5,9 +5,9 @@ TessModel::TessModel(GLuint* _program, CCamera* camera)
 	:
 	m_rProgram(*(_program)), m_rCamera(*(camera))
 {	
-	m_iIndicesCount = 24;
-	m_pfVertices = SetCubeVertices();
-	m_piIndices = SetIndices(24);
+	//m_iIndicesCount = 24;
+	//m_pfVertices = points;
+	//m_piIndices = SetIndices(24);
 }
 
 
@@ -70,10 +70,10 @@ void TessModel::GetUniformLocations()
 
 void TessModel::Render(GLfloat currentTime)
 {
-
-	glUseProgram(this->m_rProgram);
+	//printf("render terrain");
+	glUseProgram(m_rProgram);
 	glm::mat4 model; 
-	glm::vec3 pos = glm::vec3(0, 0, 0);
+	glm::vec3 pos = glm::vec3(0, 0, -5);
 	model = glm::translate(model, pos);
 	glm::mat4 mvp = m_rCamera.GetPerspectiveMatrix() * m_rCamera.GetViewMatrix() * model;
 	GLint mvLoc = glGetUniformLocation(m_rProgram, "mvp"); 
@@ -81,5 +81,6 @@ void TessModel::Render(GLfloat currentTime)
 	glBindVertexArray(VAO); 
 	glDrawArrays(GL_PATCHES, 0, 4); 
 	glBindVertexArray(0);
+
 }
 
