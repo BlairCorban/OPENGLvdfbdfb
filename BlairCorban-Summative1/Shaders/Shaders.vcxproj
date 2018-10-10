@@ -139,6 +139,8 @@
   <ItemGroup>
     <None Include="fragment_shader.glsl" />
     <None Include="geometry_shader.glsl" />
+    <None Include="tesselationevaluation_shader.glsl" />
+    <None Include="tesselation_shader.glsl" />
     <None Include="vertex_shader.glsl" />
   </ItemGroup>
   <ItemGroup>
