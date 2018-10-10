@@ -2,7 +2,7 @@
 //size of output patch & no. of times the TCS will be executed 
 layout (vertices = 4) out; 
 
-Void main() {
+void main() {
 	if (gl_InvocationID == 0) {
 		gl_TessLevelInner[0] = 8.0; 
 		gl_TessLevelInner[1] = 8.0;

@@ -20,7 +20,7 @@ void main(void)
 	lerp = clamp(lerp, 0.0f, 1.0f);
 	vec4 vFogColor = vec4(0.5f, 0.5f, 0.5f, 1.0f);
 	a_color = (gStencil == 0) ? vec4(outColor, 1) : vec4(gStencilColor, 1);
-	a_color = mix(a_color, vFogColor, lerp);
+	//a_color = mix(a_color, vFogColor, lerp);
 	
 
 }

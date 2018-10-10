@@ -149,6 +149,7 @@
     <ClInclude Include="Model.h" />
     <ClInclude Include="ShaderHelper.h" />
     <ClInclude Include="stb_image.h" />
+    <ClInclude Include="TessModel.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +158,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="ShaderHelper.cpp" />
+    <ClCompile Include="TessModel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="heightmap.png" />

@@ -6,6 +6,7 @@
 #include "freeglut.h"
 
 #include "Model.h"
+#include "TessModel.h"
 #include "Camera.h"
 #include "Utils.h"
 
@@ -39,6 +40,7 @@ private:
 
 	CCamera* m_pMainCamera;
 	std::vector<CModel*> m_vecpModels;
+	std::vector<TessModel*> m_vecpTerrain;
 	GLuint* m_pProgram;
 };
 

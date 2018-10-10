@@ -89,7 +89,7 @@ void CModel::Render(GLfloat currentTime)
 	glBindVertexArray(VAO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 
-	m_fRotateAmount += 1.0f;
+	//m_fRotateAmount += 1.0f;
 	glm::mat4 Scale = glm::scale(glm::mat4(1.0f), glm::vec3(1, 1, 1));
 	glm::mat4 Rotate = glm::rotate(glm::mat4(1.0f), glm::radians(m_fRotateAmount), glm::vec3(1.0f, 1, 1.0f));
 	glm::mat4 Translate = glm::translate(glm::mat4(1.0f), glm::vec3(0,0,-5.0f));

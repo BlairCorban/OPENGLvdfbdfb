@@ -18,6 +18,12 @@ CGameScene::~CGameScene()
 		m_vecpModels.pop_back();
 		delete tempModel;
 	}
+	while (!m_vecpTerrain.empty())
+	{
+		TessModel* tempModel = m_vecpTerrain.back();
+		m_vecpTerrain.pop_back();
+		delete tempModel;
+	}
 
 	if (m_pMainCamera != nullptr)
 	{
@@ -26,32 +32,35 @@ CGameScene::~CGameScene()
 	}
 }
 
-void CreateTerrain(const std::string& location)
-{
-
-	int w, h, channels;
-	unsigned char* image = stbi_load(location.c_str(), &w, &h, &channels, 0);
-	
-	//stbi_uc pixel = image[w * y + x];
-
-	std::vector<float> terrain = std::vector<float>(w * h);
-	std::vector<float>& heightMapData = terrain;
-	for (GLsizei r = 0; r < h; ++r)
-	{
-		for (GLsizei c = 0; c < w; ++c)
-		{
-			heightMapData[r * w + c] = image[(r * w + c) * channels] / 255.0f;
-		}
-
-	}
-
-	stbi_image_free(image);
-	/*for (GLsizei i = 0; i < heightMapData.size(); i++)
-	{
-		std::cout << heightMapData[i];
-	}*/
-
-}
+//TessModel* CreateTerrain(const std::string& location)
+//{
+//
+//	int w, h, channels;
+//	unsigned char* image = stbi_load(location.c_str(), &w, &h, &channels, 0);
+//	
+//	//stbi_uc pixel = image[w * y + x];
+//
+//	std::vector<float> terrain = std::vector<float>(w * h);
+//	std::vector<float>& heightMapData = terrain;
+//	for (GLsizei r = 0; r < h; ++r)
+//	{
+//		for (GLsizei c = 0; c < w; ++c)
+//		{
+//			heightMapData[r * w + c] = image[(r * w + c) * channels] / 255.0f;
+//		}
+//
+//	}
+//
+//	stbi_image_free(image);
+//	/*for (GLsizei i = 0; i < heightMapData.size(); i++)
+//	{
+//		std::cout << heightMapData[i];
+//	}*/
+//	TessModel* meme;
+//	
+//
+//	return meme;
+//}
 
 
 bool CGameScene::Initialise(GLuint* _program)
@@ -61,13 +70,13 @@ bool CGameScene::Initialise(GLuint* _program)
 	if(!m_pMainCamera)
 		m_pMainCamera = new CCamera(m_pProgram);
 
-	CreateTerrain("heightmap.png");
-
-
-
-	CModel* bigcube = new CModel(m_pProgram);
-	bigcube->Initialize(TRUE);
-	m_vecpModels.push_back(bigcube);
+	TessModel* terrain = new TessModel(m_pProgram, m_pMainCamera);
+	terrain->Initialize(TRUE);
+	m_vecpTerrain.push_back(terrain);
+	
+	//CModel* bigcube = new CModel(m_pProgram);
+	//bigcube->Initialize(TRUE);
+	//m_vecpModels.push_back(bigcube);
 	
 
 	return true;
@@ -91,6 +100,10 @@ void CGameScene::RenderScene()
 	for (unsigned int i = 0; i < m_vecpModels.size(); i++)
 	{
 		m_vecpModels[i]->Render(fCurrentTime);
+	}
+	for (unsigned int i = 0; i < m_vecpTerrain.size(); i++)
+	{
+		m_vecpTerrain[i]->Render(fCurrentTime);
 	}
 
 	glDisable(GL_SCISSOR_TEST);
@@ -130,6 +143,12 @@ void CGameScene::RestartScene()
 	{
 		CModel* tempModel = m_vecpModels.back();
 		m_vecpModels.pop_back();
+		delete tempModel;
+	}
+	while (!m_vecpTerrain.empty())
+	{
+		TessModel* tempModel = m_vecpTerrain.back();
+		m_vecpTerrain.pop_back();
 		delete tempModel;
 	}
 

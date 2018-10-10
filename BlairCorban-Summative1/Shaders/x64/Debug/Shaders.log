@@ -1,22 +1,19 @@
-﻿  ShaderHelper.cpp
-d:\users\blair.cor6870\documents\github\opengl\blaircorban-summative1\shaders\shaderhelper.cpp(48): warning C4267: '=': conversion from 'size_t' to 'GLint', possible loss of data
-  Model.cpp
-  main.cpp
-  GameScene.cpp
-d:\users\blair.cor6870\documents\github\opengl\blaircorban-summative1\shaders\gamescene.cpp(56): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
-d:\users\blair.cor6870\documents\github\opengl\blaircorban-summative1\shaders\gamescene.cpp(56): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-  Camera.cpp
-  Generating Code...
+﻿  GameScene.cpp
+d:\users\blair.cor6870\documents\github\openglvdfbdfb\blaircorban-summative1\shaders\gamescene.cpp(100): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+d:\users\blair.cor6870\documents\github\openglvdfbdfb\blaircorban-summative1\shaders\gamescene.cpp(100): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
 Camera.obj : error LNK2001: unresolved external symbol __imp___glewGetUniformLocation
 Model.obj : error LNK2001: unresolved external symbol __imp___glewGetUniformLocation
+TessModel.obj : error LNK2001: unresolved external symbol __imp___glewGetUniformLocation
 Camera.obj : error LNK2001: unresolved external symbol __imp___glewUniform3fv
 Model.obj : error LNK2001: unresolved external symbol __imp___glewUniform3fv
 Camera.obj : error LNK2001: unresolved external symbol __imp___glewUniformMatrix4fv
 Model.obj : error LNK2001: unresolved external symbol __imp___glewUniformMatrix4fv
+TessModel.obj : error LNK2001: unresolved external symbol __imp___glewUniformMatrix4fv
 GameScene.obj : error LNK2019: unresolved external symbol __imp_glutSwapBuffers referenced in function "public: void __cdecl CGameScene::RenderScene(void)" (?RenderScene@CGameScene@@QEAAXXZ)
 GameScene.obj : error LNK2019: unresolved external symbol __imp_glutGet referenced in function "public: void __cdecl CGameScene::RenderScene(void)" (?RenderScene@CGameScene@@QEAAXXZ)
 GameScene.obj : error LNK2001: unresolved external symbol __imp___glewUseProgram
 main.obj : error LNK2001: unresolved external symbol __imp___glewUseProgram
+TessModel.obj : error LNK2001: unresolved external symbol __imp___glewUseProgram
 main.obj : error LNK2019: unresolved external symbol __imp_glewInit referenced in function main
 main.obj : error LNK2019: unresolved external symbol __imp_glewGetErrorString referenced in function main
 main.obj : error LNK2019: unresolved external symbol __imp_glutInitWindowPosition referenced in function main
@@ -36,15 +33,22 @@ main.obj : error LNK2019: unresolved external symbol __imp___glutCreateWindowWit
 main.obj : error LNK2019: unresolved external symbol __imp_glutLeaveMainLoop referenced in function "void __cdecl ProcessInput(void)" (?ProcessInput@@YAXXZ)
 main.obj : error LNK2001: unresolved external symbol __imp___glewActiveTexture
 Model.obj : error LNK2001: unresolved external symbol __imp___glewBindBuffer
+TessModel.obj : error LNK2001: unresolved external symbol __imp___glewBindBuffer
 Model.obj : error LNK2001: unresolved external symbol __imp___glewBufferData
+TessModel.obj : error LNK2001: unresolved external symbol __imp___glewBufferData
 Model.obj : error LNK2001: unresolved external symbol __imp___glewGenBuffers
+TessModel.obj : error LNK2001: unresolved external symbol __imp___glewGenBuffers
 Model.obj : error LNK2001: unresolved external symbol __imp___glewEnableVertexAttribArray
+TessModel.obj : error LNK2001: unresolved external symbol __imp___glewEnableVertexAttribArray
 Model.obj : error LNK2001: unresolved external symbol __imp___glewGetAttribLocation
 Model.obj : error LNK2001: unresolved external symbol __imp___glewUniform1f
 Model.obj : error LNK2001: unresolved external symbol __imp___glewUniform1i
 Model.obj : error LNK2001: unresolved external symbol __imp___glewVertexAttribPointer
+TessModel.obj : error LNK2001: unresolved external symbol __imp___glewVertexAttribPointer
 Model.obj : error LNK2001: unresolved external symbol __imp___glewBindVertexArray
+TessModel.obj : error LNK2001: unresolved external symbol __imp___glewBindVertexArray
 Model.obj : error LNK2001: unresolved external symbol __imp___glewGenVertexArrays
+TessModel.obj : error LNK2001: unresolved external symbol __imp___glewGenVertexArrays
 ShaderHelper.obj : error LNK2001: unresolved external symbol __imp___glewAttachShader
 ShaderHelper.obj : error LNK2001: unresolved external symbol __imp___glewCompileShader
 ShaderHelper.obj : error LNK2001: unresolved external symbol __imp___glewCreateProgram
@@ -56,7 +60,7 @@ ShaderHelper.obj : error LNK2001: unresolved external symbol __imp___glewGetShad
 ShaderHelper.obj : error LNK2001: unresolved external symbol __imp___glewLinkProgram
 ShaderHelper.obj : error LNK2001: unresolved external symbol __imp___glewShaderSource
 ShaderHelper.obj : error LNK2001: unresolved external symbol __imp___glewValidateProgram
-D:\Users\blair.cor6870\Documents\GitHub\OPENGL\BlairCorban-Summative1\Shaders\\Dependencies\freeglut\freeglut.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-D:\Users\blair.cor6870\Documents\GitHub\OPENGL\BlairCorban-Summative1\Shaders\\Dependencies\glew\glew32.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-D:\Users\blair.cor6870\Documents\GitHub\OPENGL\BlairCorban-Summative1\Shaders\\Dependencies\freeglut\freeglutd.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-D:\Users\blair.cor6870\Documents\GitHub\OPENGL\BlairCorban-Summative1\x64\Debug\Shaders.exe : fatal error LNK1120: 45 unresolved externals
+D:\Users\blair.cor6870\Documents\GitHub\OPENGLvdfbdfb\BlairCorban-Summative1\Shaders\\Dependencies\freeglut\freeglut.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+D:\Users\blair.cor6870\Documents\GitHub\OPENGLvdfbdfb\BlairCorban-Summative1\Shaders\\Dependencies\glew\glew32.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+D:\Users\blair.cor6870\Documents\GitHub\OPENGLvdfbdfb\BlairCorban-Summative1\Shaders\\Dependencies\freeglut\freeglutd.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+D:\Users\blair.cor6870\Documents\GitHub\OPENGLvdfbdfb\BlairCorban-Summative1\x64\Debug\Shaders.exe : fatal error LNK1120: 45 unresolved externals
